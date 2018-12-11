@@ -1,0 +1,49 @@
+funciones swal
+
+
+    title: título de la ventana modal.
+    text: descripción de la ventana modal.
+    type: tipo de ventana modal. Los valores posibles son warning, error, success y info. También es posible poner el valor input para que el usuario pueda introducir su propio texto.
+    allowEscapeKey: los valores posibles son true o false. Al ponerlo en true permitimos que el usuario pueda cerrar la ventana modal con el botón escape.
+    customClass: clase CSS personalizada para la ventana modal.
+    allowOutsideClick: los valores posibles son true o false. Al ponerlo en true permitimos que el usuario cierre la ventana modal haciendo clic fuera de la misma.
+    showCancelButton: pondremos true o false según si queremos mostrar el botón de cancelar o no.
+    showConfirmButton: pondremos true o false según si queremos mostrar el botón de aceptación o no.
+    confirmButtonText: string para cambiar el texto por defecto del botón de aceptación.
+    confirmButtonColor: valor hexadecimal del color de fondo del botón de aceptación.
+    cancelButtonText: string para cambiar el texto por defecto del botón cancelar.
+    cancelButtonColor: valor hexadecimal del color de fondo del botón cancelar.
+    closeOnConfirm: admite los valores true o false. Pondremos false cuando nos interese que la ventana modal permanezca abierta cuando el usuario presione el botón de aceptación.
+    closeOnCancel: igual que closeOnConfirm pero con el botón de cancelación.
+    imageUrl: para añadir un icono personalizado para la ventana modal. Debe ser un string con la ruta hacia la imagen.
+    imageSize: en caso de haber indicado una URL de imagen (parámetro anterior), podemos indicar el tamaño que debe tener. Hay que poner dos valores en píxels separados con “x”, el primero para el ancho y el segundo para el alto. Por ejemplo: “85×60”.
+    timer: indicaremos los milisegundos que deben transcurrir para que la ventana modal se cierre automáticamente.
+    html: permite los valores true y false. Si ponemos true podremos poner poner etiquetas HTML en los parámetros title y text.
+    animation: admite los valores true y false. Si ponemos false la animación de abertura de la ventana modal se desactiva.
+    inputType: podemos indicar el tipo de campo input cuando el valor del parámetro type está en input.
+    inputPlaceholder: en caso de usar el valor input en el parámetro type, podemos indicar un placeholder.
+    inputValue: en caso de usar el valor input en el parámetro type, podemos indicar el valor del campo.
+http 
+
+
+swal delete
+
+swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonClass: "btn-danger",
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel plx!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm) {
+  if (isConfirm) {
+    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+  } else {
+    swal("Cancelled", "Your imaginary file is safe :)", "error");
+  }
+});
+
